@@ -5,9 +5,72 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    background-color: #F9F8F4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.app {
+  width: 80%;
+  margin-left: 10%;
 }
+
+.app-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Card*/
+.carrier-card {
+  margin-top: 16px;
+}
+
+.card-header-sub-title {
+    display: flex;
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.card-description {
+    font-family: Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
+    font-size: 14px;
+    color: #959595;
+    width: 50%;
+    border-top: 1px solid #d1cdcd;
+    padding-top: 10px;
+}
+
+/*Card Header*/
+h4 {
+  font-family: Basetica, Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+h6 {
+  font-family: Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #959595;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+/*Card Features*/
+.carrier-features {
+    font-family: Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
+    font-size: 14px;
+    color: #959595;
+    width: 50%;
+    border-top: 1px solid #d1cdcd;
+    padding-top: 10px;
+}
+
+.carrier-features ul {
+    list-style-position: outside;
+    padding-left: 16px;
+}
+
+
