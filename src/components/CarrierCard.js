@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //Material UI
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -35,7 +35,8 @@ const styles = {
     },
     expansionPanelSummaryRoot: {
         flexDirection: 'column',
-        alignContent: 'space-between'
+        alignContent: 'space-between',
+        padding: '0 10px'
     },
     expansionPanelSummaryContent: {
         width: '100%'
@@ -49,11 +50,13 @@ const styles = {
 };
 
 const CarrierCard = props => {
+    //Use hooks here to have one piece of local state that prevents the expansion panel from expanding when the quote button is clicked
+    const [expand, setExpand] = useState(false);
     const { description, featureList, disclaimerText, classes, ...rest } = props;
     return (
-            <ExpansionPanel className={classes.expansionPanelRoot}>
+            <ExpansionPanel className={classes.expansionPanelRoot} expanded={expand}>
                 <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon className={classes.expansionPanelSummaryExpandIcon}/>}
+                    expandIcon={<ExpandMoreIcon className={classes.expansionPanelSummaryExpandIcon} onClick={() => setExpand(!expand)}/>}
                     aria-controls='panel1a-content'
                     id='panel1a-header'
                     classes={{

@@ -23,14 +23,17 @@ const CarrierCardHeader = props => {
         });
     };
 
-    // const renderFeatureIcons = () => {
-    //     features.map(feature => {
-    //         // return (
-    //         //     <Icon key={feature.group_id}>{feature.icon}</Icon>
-    //         // )
-    //         console.log(feature.icon);
-    //     });
-    // };
+    const renderFeatureIcons = () => {
+        return features.map((feature, index) => {
+            if(feature.path) {
+                return (
+                    <svg width='19' height='19' key={index} style={{marginLeft: '5px'}}>
+                        <path d={feature.path} fill='#1c1e1f'/>
+                    </svg>
+                );
+            }
+        })
+    };
 
     return (
         <div className='carrier-card-header'>
@@ -39,12 +42,15 @@ const CarrierCardHeader = props => {
                     <StarIcon className='star-tag' />
                 </div>
             }
-            <div style={{display: 'flex', alignItems: 'center'}}>
+            <div className='carrier-info'>
                 <img src={logo} alt='logo' />
-                <div style={{marginLeft: '35px'}}>
+                <div>
                     <h4>{name}</h4>
                     {tagline && <h6>{tagline}</h6>}
-                    <div>{stars && renderRating()}</div>
+                    <div className='rating-and-feature'>
+                        <div>{stars && renderRating()}</div>
+                        <div>{features && renderFeatureIcons()}</div>
+                    </div>
                 </div>
             </div>
             <div>

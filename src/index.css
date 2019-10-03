@@ -80,6 +80,21 @@ h6 {
   margin-bottom: 0;
 }
 
+.carrier-info {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.carrier-info img {
+    margin-right: 35px;
+}
+
+.rating-and-feature {
+    display: flex;
+    justify-content: space-between;
+}
+
 /*Card Features*/
 .carrier-features {
     font-family: Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
