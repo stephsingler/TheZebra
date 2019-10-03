@@ -1,7 +1,7 @@
 import React from 'react';
 import CarrierQuote from "./CarrierQuote";
 import StarIcon from '@material-ui/icons/StarRate';
-import Icon from "@material-ui/core/Icon";
+import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
 
 // type Props = {
 //     cardInfo: Object
@@ -33,12 +33,17 @@ const CarrierCardHeader = props => {
 
     return (
         <div className="carrier-card-header">
-            <h4>{name}</h4>
-            {tagline && <h6>{tagline}</h6>}
-            <div>
-                {stars && renderRating()}
+            <div style={{display: 'flex', alignItems: 'center'}}>
+                <img src={logo} alt='logo' />
+                <div style={{marginLeft: '35px'}}>
+                    <h4>{name}</h4>
+                    {tagline && <h6>{tagline}</h6>}
+                    <div>{stars && renderRating()}</div>
+                </div>
             </div>
-            <CarrierQuote quote={rest}/>
+            <div>
+                <CarrierQuote quote={rest}/>
+            </div>
         </div>
     );
 };

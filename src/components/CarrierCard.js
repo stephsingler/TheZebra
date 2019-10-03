@@ -6,6 +6,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
+import { withStyles } from '@material-ui/core/styles';
 //Components
 import CarrierFeatureList from "./CarrierFeatureList";
 import CarrierCardHeader from "./CarrierCardHeader";
@@ -27,20 +28,45 @@ import CarrierCardHeader from "./CarrierCardHeader";
 //     tag: string
 // }
 
+const styles = {
+    expansionPanelRoot: {
+        minHeight: '130px'
+    },
+    expansionPanelSummaryRoot: {
+        flexDirection: 'column',
+        alignContent: 'space-between'
+    },
+    expansionPanelSummaryContent: {
+        width: '100%'
+    },
+    expansionPanelSummaryExpandIcon: {
+        color: '#959595'
+    },
+    expansionPanelDetailsRoot: {
+        justifyContent: 'space-between'
+    }
+};
+
 const CarrierCard = props => {
-    const { description, featureList, disclaimerText, ...rest } = props;
+    const { description, featureList, disclaimerText, classes, ...rest } = props;
     return (
         <div className="carrier-card">
-            <ExpansionPanel style={{minHeight: '130px'}}>
+            <ExpansionPanel className={classes.expansionPanelRoot}>
                 <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon className={classes.expansionPanelSummaryExpandIcon}/>}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
+                    classes={{
+                        root: classes.expansionPanelSummaryRoot,
+                        content: classes.expansionPanelSummaryContent
+                    }}
                 >
                     <CarrierCardHeader cardInfo={rest} />
                 </ExpansionPanelSummary>
-                <ExpansionPanelDetails style={{justifyContent: 'space-between'}}>
-                    {featureList && <CarrierFeatureList featureList={featureList}/>}
+                <ExpansionPanelDetails className={classes.expansionPanelDetailsRoot}>
+                    {featureList &&
+                        <CarrierFeatureList featureList={featureList}/>
+                    }
                     {description &&
                         <Typography>
                                 <p className="card-header-sub-title"><MenuBookIcon style={{fontSize: '22px',marginRight: '8px'}}/> {`Why ${props.name}?`}</p>
@@ -48,11 +74,12 @@ const CarrierCard = props => {
                                     {description}
                                     <p style={{fontSize: '11px'}}>{disclaimerText && <em>{disclaimerText}</em>}</p>
                                 </div>
-                        </Typography>}
+                        </Typography>
+                    }
                         </ExpansionPanelDetails>
             </ExpansionPanel>
         </div>
     );
 };
 
-export default CarrierCard;
+export default withStyles(styles)(CarrierCard);
