@@ -8,8 +8,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { withStyles } from '@material-ui/core/styles';
 //Components
-import CarrierFeatureList from "./CarrierFeatureList";
-import CarrierCardHeader from "./CarrierCardHeader";
+import CarrierFeatureList from './CarrierFeatureList';
+import CarrierCardHeader from './CarrierCardHeader';
 
 // type Props = {
 //     type: number,
@@ -30,7 +30,8 @@ import CarrierCardHeader from "./CarrierCardHeader";
 
 const styles = {
     expansionPanelRoot: {
-        minHeight: '130px'
+        minHeight: '130px',
+        marginTop: '16px'
     },
     expansionPanelSummaryRoot: {
         flexDirection: 'column',
@@ -50,12 +51,11 @@ const styles = {
 const CarrierCard = props => {
     const { description, featureList, disclaimerText, classes, ...rest } = props;
     return (
-        <div className="carrier-card">
             <ExpansionPanel className={classes.expansionPanelRoot}>
                 <ExpansionPanelSummary
                     expandIcon={<ExpandMoreIcon className={classes.expansionPanelSummaryExpandIcon}/>}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
+                    aria-controls='panel1a-content'
+                    id='panel1a-header'
                     classes={{
                         root: classes.expansionPanelSummaryRoot,
                         content: classes.expansionPanelSummaryContent
@@ -69,8 +69,8 @@ const CarrierCard = props => {
                     }
                     {description &&
                         <Typography>
-                                <p className="card-header-sub-title"><MenuBookIcon style={{fontSize: '22px',marginRight: '8px'}}/> {`Why ${props.name}?`}</p>
-                                <div className="card-description">
+                                <p className='card-header-sub-title'><MenuBookIcon style={{fontSize: '22px',marginRight: '8px'}}/> {`Why ${props.name}?`}</p>
+                                <div className='card-description'>
                                     {description}
                                     <p style={{fontSize: '11px'}}>{disclaimerText && <em>{disclaimerText}</em>}</p>
                                 </div>
@@ -78,7 +78,6 @@ const CarrierCard = props => {
                     }
                         </ExpansionPanelDetails>
             </ExpansionPanel>
-        </div>
     );
 };
 

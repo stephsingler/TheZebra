@@ -1,4 +1,5 @@
 import React from 'react';
+//Material UI
 import ListIcon from '@material-ui/icons/List';
 import Typography from "@material-ui/core/Typography";
 
@@ -22,8 +23,8 @@ const CarrierFeatureList = props => {
     }
     return (
         <Typography style={{width: '100%'}}>
-            <p className="card-header-sub-title"><ListIcon style={{fontSize: '24px', marginRight: '8px'}}/> Features</p>
-            <div className="carrier-features">
+            <p className='card-header-sub-title'><ListIcon style={{fontSize: '24px', marginRight: '8px'}}/> Features</p>
+            <div className='carrier-features'>
                 <ul>
                     {renderFeatureList()}
                 </ul>

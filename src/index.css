@@ -1,10 +1,5 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
     background-color: #F9F8F4;
 }
 
@@ -20,10 +15,6 @@ body {
 }
 
 /*Card*/
-.carrier-card {
-  margin-top: 16px;
-}
-
 .card-header-sub-title {
     display: flex;
     width: 50%;
@@ -48,9 +39,33 @@ body {
     align-items: center;
 }
 
+.corner-tag {
+    width: 0;
+    height: 0;
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid transparent;
+    border-left: 28px solid #5c6cff;
+    position: absolute;
+    top: -18px;
+    left: -4px;
+    transform: rotate(225deg);
+    -ms-transform:rotate(2250deg); /* IE 9 */
+    -moz-transform:rotate(225deg); /* Firefox */
+    -webkit-transform:rotate(225deg); /* Safari and Chrome */
+    -o-transform:rotate(225deg); /* Opera */
+}
+
+.star-tag {
+    color: #ffffff;
+    font-size: 18px !important;
+    position: absolute;
+    top: -11px;
+    left: -26px;
+}
+
 h4 {
   font-family: Basetica, Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   margin-top: 8px;
   margin-bottom: 0;

@@ -1,7 +1,8 @@
 import React from 'react';
-import CarrierQuote from "./CarrierQuote";
+//Material UI
 import StarIcon from '@material-ui/icons/StarRate';
-import DirectionsCarIcon from '@material-ui/icons/DirectionsCar';
+//Components
+import CarrierQuote from './CarrierQuote';
 
 // type Props = {
 //     cardInfo: Object
@@ -32,7 +33,12 @@ const CarrierCardHeader = props => {
     // };
 
     return (
-        <div className="carrier-card-header">
+        <div className='carrier-card-header'>
+            {cornerTag &&
+                <div className='corner-tag'>
+                    <StarIcon className='star-tag' />
+                </div>
+            }
             <div style={{display: 'flex', alignItems: 'center'}}>
                 <img src={logo} alt='logo' />
                 <div style={{marginLeft: '35px'}}>

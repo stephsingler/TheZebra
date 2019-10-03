@@ -1,6 +1,8 @@
 import React from 'react';
-import CarrierSorter from "./CarrierSorter";
-import CarrierCard from "./CarrierCard";
+//Components
+import CarrierSorter from './CarrierSorter';
+import CarrierCard from './CarrierCard';
+//Data
 const carrierData = require('../carrier_cards');
 
 // Please see the `Real World Application` section of the README for how I would have configured App componentDidMount with an active endpoint.
@@ -33,14 +35,12 @@ const App = () => {
   };
 
   return (
-      <div className="app">
-        <div className="app-top-bar">
+      <div className='app'>
+        <div className='app-top-bar'>
           <p>You just compared <strong>{carrierData.carriers_searched} rates</strong> in {minutes} {pluralMinutes}!</p>
           <CarrierSorter />
         </div>
-        <div className="carrier-card-list">
-          {renderCards()}
-        </div>
+        {renderCards()}
       </div>
   );
 };
