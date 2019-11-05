@@ -1,5 +1,5 @@
 
-##The Zebra Code Challenge -- In Progress
+## IN PROGRESS
 
 ### Configuration
 
