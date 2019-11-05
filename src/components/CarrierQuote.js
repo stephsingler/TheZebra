@@ -1,14 +1,15 @@
+// @flow
 import React from 'react';
 //Material UI
 import Fab from '@material-ui/core/Fab';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
-// type Props = {
-//     quote: Object
-// }
+type Props = {
+    quote: Object
+}
 
-const CarrierQuote = props => {
+const CarrierQuote = (props: Props) => {
     const { rate, type, linkText, link, tag } = props.quote;
     const buttonColor = type < 2 ? 'blue-button' : 'orange-button';
     const buttonIcon = type < 2 ? <FlashOnIcon /> : ArrowDownwardIcon;
@@ -20,7 +21,7 @@ const CarrierQuote = props => {
     };
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div className='carrier-quote'>
             {rate &&
                 <p>
                     <span style={{fontSize: '12px', color: '#5c6cff', fontWeight: '700', marginRight: '7px'}}>{tag}</span>

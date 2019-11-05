@@ -1,13 +1,14 @@
+// @flow
 import React from 'react';
 //Material UI
 import ListIcon from '@material-ui/icons/List';
 import Typography from "@material-ui/core/Typography";
 
-// type Props = {
-//     featureList: Array<String>
-// }
+type Props = {
+    featureList: Array<string>
+}
 
-const CarrierFeatureList = props => {
+const CarrierFeatureList = (props: Props) => {
     const renderFeatureList = () => {
         const wrapper = document.createElement('div');
         wrapper.innerHTML = props.featureList[0];

@@ -1,3 +1,4 @@
+// @flow
 import React, { useState } from 'react';
 //Material UI
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -11,22 +12,23 @@ import { withStyles } from '@material-ui/core/styles';
 import CarrierFeatureList from './CarrierFeatureList';
 import CarrierCardHeader from './CarrierCardHeader';
 
-// type Props = {
-//     type: number,
-//     name: string,
-//     tagline: string,
-//     featureList: Array<string>,
-//     link: string,
-//     linkText: string,
-//     logo: string,
-//     features: Array<Object>,
-//     description: string,
-//     rate: number,
-//     stars: number,
-//     disclaimerText: string
-//     cornerTag: boolean
-//     tag: string
-// }
+type Props = {
+    type: number,
+    name: string,
+    tagline: string,
+    featureList: Array<string>,
+    link: string,
+    linkText: string,
+    logo: string,
+    features: Array<Object>,
+    description: string,
+    rate: number,
+    stars: number,
+    disclaimerText: string,
+    cornerTag: boolean,
+    tag: string,
+    classes: Object
+}
 
 const styles = {
     expansionPanelRoot: {
@@ -49,7 +51,7 @@ const styles = {
     }
 };
 
-const CarrierCard = props => {
+const CarrierCard = (props: Props) => {
     //Use hooks here to have one piece of local state that prevents the expansion panel from expanding when the quote button is clicked
     const [expand, setExpand] = useState(false);
     const { description, featureList, disclaimerText, classes, ...rest } = props;

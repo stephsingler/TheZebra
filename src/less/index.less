@@ -1,0 +1,140 @@
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5) ", ~"only screen and (min--moz-device-pixel-ratio: 1.5) ", ~"only screen and (-o-min-device-pixel-ratio: 3/2) ", ~"only screen and (min-device-pixel-ratio: 1.5) ";
+@small-mobile: ~"only screen and (max-width: 480px) ";
+@mobile: ~"only screen and (min-width: 481px)  and (max-width: 668px) ";
+@tablet-narrow: ~"only screen and (min-width: 669px) and (max-width: 768px) ";
+@tablet: ~"only screen and (min-width: 769px) and (max-width: 991px) ";
+@desktop: ~"only screen and (min-width: 992px) and (max-width: 1024px) ";
+@desktop-xl: ~"only screen and (min-width: 1025px) ";
+
+@contentFont: Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
+@contentColor: #959595;
+@titleFont: Basetica, Roboto, Helvetica Neue, Arial, Verdana, sans-serif;
+@blueButton: linear-gradient(350deg, #6169f4 40%, #1cbeec 85%);
+@orangeButton: linear-gradient(350deg, #f87000 40%, #f8ae00 85%);
+
+body {
+  margin: 0;
+  background-color: #F9F8F4;
+}
+
+//App.js
+.app {
+  width: 80%;
+  margin-left: 10%;
+  .app-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: @contentFont;
+    margin-top: 20px;
+  }
+}
+
+//CarrierCard.js
+.card-header-sub-title {
+  display: flex;
+  width: 50%;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.card-description {
+  font-family: @contentFont;
+  font-size: 14px;
+  color: @contentColor;
+  width: 50%;
+  border-top: 1px solid #d1cdcd;
+  padding-top: 10px;
+}
+
+//CarrierCardHeader.js
+.carrier-card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //Purple triangle
+  .corner-tag {
+    width: 0;
+    height: 0;
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid transparent;
+    border-left: 28px solid #5c6cff;
+    position: absolute;
+    top: -18px;
+    left: -4px;
+    transform: rotate(225deg);
+    -ms-transform:rotate(2250deg); /* IE 9 */
+    -moz-transform:rotate(225deg); /* Firefox */
+    -webkit-transform:rotate(225deg); /* Safari and Chrome */
+    -o-transform:rotate(225deg); /* Opera */
+    .star-tag {
+      color: #ffffff;
+      font-size: 18px !important;
+      position: absolute;
+      top: -11px;
+      left: -26px;
+    }
+  }
+  .carrier-info {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    img {
+      margin-right: 35px;
+    }
+    h4 {
+      font-family: @titleFont;
+      font-size: 21px;
+      font-weight: 600;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    h6 {
+      font-family: @contentFont;
+      font-size: 12px;
+      font-weight: 500;
+      color: @contentColor;
+      margin-top: 3px;
+      margin-bottom: 0;
+    }
+    .rating-and-feature {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+//CarrierFeatureList
+.carrier-features {
+  font-family: @contentFont;
+  font-size: 14px;
+  color: @contentColor;
+  width: 50%;
+  border-top: 1px solid #d1cdcd;
+  padding-top: 10px;
+  ul {
+    list-style-position: outside;
+    padding-left: 16px;
+  }
+}
+
+//CarrierQuote
+.carrier-quote {
+  display: flex;
+  flex-direction: column;
+  font-family: @contentFont;
+  .quote-button {
+    color: #ffffff !important;
+    font-weight: 500  !important;
+    min-width: 130px !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+  }
+  .blue-button {
+    background-image: @blueButton;
+  }
+  .orange-button {
+    background-image: @orangeButton;
+  }
+}

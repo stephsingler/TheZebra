@@ -1,14 +1,15 @@
+// @flow
 import React from 'react';
 //Material UI
 import StarIcon from '@material-ui/icons/StarRate';
 //Components
 import CarrierQuote from './CarrierQuote';
 
-// type Props = {
-//     cardInfo: Object
-// }
+type Props = {
+    cardInfo: Object
+}
 
-const CarrierCardHeader = props => {
+const CarrierCardHeader = (props: Props) => {
     const { name, tagline, stars, features, logo, cornerTag, ...rest } = props.cardInfo;
 
     const renderRating = () => {
@@ -24,15 +25,16 @@ const CarrierCardHeader = props => {
     };
 
     const renderFeatureIcons = () => {
-        return features.map((feature, index) => {
-            if(feature.path) {
-                return (
-                    <svg width='19' height='19' key={index} style={{marginLeft: '5px'}}>
-                        <path d={feature.path} fill='#1c1e1f'/>
-                    </svg>
-                );
-            }
-        })
+        // eslint-disable-next-line array-callback-return
+       return features.map((feature, index) => {
+           if(feature.path) {
+               return (
+                   <svg width='19' height='19' key={index} style={{marginLeft: '5px'}}>
+                       <path d={feature.path} fill='#1c1e1f'/>
+                   </svg>
+               );
+           }
+        });
     };
 
     return (
